@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         track.style.transform = `translateY(-${imgWidth * currentIndex}px)`;
     }
-    //INTERVALO 2 Segundos
     setInterval(moveGallery, 2000); 
 });
 
