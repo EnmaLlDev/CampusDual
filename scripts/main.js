@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     //REGISTRO
     let registerForm = document.getElementById('registerForm');
     let inputName = document.getElementById('inputName');
@@ -101,19 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    let track = document.querySelector('.gallery-track');
-    let images = document.querySelectorAll('.gallery-img');
+    const galleryTrack = document.querySelector('.gallery-track');
+    const galleryItems = document.querySelectorAll('.gallery-track div');
     let currentIndex = 0;
-    let imgWidth =images[0].offsetWidth + 10; 
+    const itemWidth = galleryItems[0].clientWidth;
+    const totalItems = galleryItems.length;
 
-    function moveGallery() {
-        currentIndex++;
-        if (currentIndex > images.length - 1) {
-            currentIndex = 0;
-        }
-        track.style.transform = `translateY(-${imgWidth * currentIndex}px)`;
-    }
-    setInterval(moveGallery, 2000); 
+    const moveToNextItem = () => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        const offset = -currentIndex * itemWidth;
+        galleryTrack.style.transform = `translateX(${offset}px)`;
+    };
+    setInterval(moveToNextItem, 3000);
 });
-
