@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/effectsHome.css" />
-    <script src="/scripts/main.js"></script>
+    <script defer src="/scripts/functionsJs.js"></script>
     <title>NEWS IT</title>
 </head>
 
 <body>
-    <h1>NEWS IT</h1>
-    <p>Bienvenido a NEWS IT, tu fuente confiable de noticias tecnológicas.</p>
+    <h1 class="fade-in-up">NEWS IT</h1>
     <nav class="nav">
         <ul>
             <li><a href="/views/index.html">Home</a></li>
@@ -19,34 +17,83 @@
             <li><a href="/views/login.html">Login</a></li>
         </ul>
     </nav>
+
     <div class="info-home">
-    <!--<h2>AboutUs</h2>-->
-        <p>NEWS IT es un sitio dedicado a ofrecer las últimas noticias y actualizaciones del mundo tecnológico.</p> 
+        <p class="fade-in-up">Un sitio dedicado a ofrecer las últimas noticias y actualizaciones del mundo tecnológico.</p> 
     </div>
-    
-    <!--<h2>Galería</h2>-->
-    <h2>Destacadas</h2>
-        <div class="gallery-container">
-            <div class="gallery-track">
-                <div id="1" style="background-image: url('/assets/breaking-news-background.jpeg');"></div>
-                <div id="2" style="background-image: url('/assets/java.jpg');"></div>
-                <div id="3" style="background-image: url('/assets/breaking-news-background.jpeg');"></div>
-            </div>
+
+    <section class="gallery-container">
+        <h2>Destacadas</h2>
+        <div class="gallery-track">
+            <ul>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Últimas Noticias</h3>
+                        <p class="zoom-in">Descubre las últimas novedades en tecnología, desde lanzamientos de productos hasta análisis de tendencias.</p>
+                        <img src="/assets/java.jpg" alt="Java News" class="zoom-in"/>
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Innovaciones Tecnológicas</h3>
+                        <p class="zoom-in">Explora las innovaciones que están cambiando el mundo de la tecnología.</p>
+                        <img src="/assets/breaking-news-background.jpeg" alt="News" class="zoom-in"/>
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Opiniones</h3>
+                        <p class="zoom-in">Lee opiniones sobre los temas más relevantes en el ámbito tecnológico.</p>
+                        <img src="/assets/java.jpg" alt="Java News 2" class="zoom-in" />
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Eventos </h3>
+                        <p class="zoom-in">Entérate de los próximos eventos en el mundo de la tecnología.</p>
+                        <img src="/assets/breaking-news-background.jpeg" alt="News 2" class="zoom-in"/>
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Análisis</h3>
+                        <p class="zoom-in">Lee el análisis sobre los temas más relevantes en el ámbito tecnológico.</p>
+                        <img src="/assets/java.jpg" alt="Java News 3" class="zoom-in"/>
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Innovaciones Tecnológicas</h3>
+                        <p class="zoom-in">Explora las innovaciones que están cambiando el mundo de la tecnología.</p>
+                        <img src="/assets/breaking-news-background.jpeg" alt="News 3" class="zoom-in"/>
+                    </div>
+                </li>
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Análisis</h3>
+                        <p class="zoom-in">Lee el análisis sobre los temas más relevantes en el ámbito tecnológico.</p>
+                        <img src="/assets/java.jpg" alt="Java News 4" class="zoom-in"/>
+                    </div>
+                </li>
+
+                <li class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3 class="zoom-in">Conferencias</h3>
+                        <p class="zoom-in">Entérate de las próximas conferencias en el mundo de la tecnología.</p>
+                        <img src="/assets/breaking-news-background.jpeg" alt="News 4" class="zoom-in"/>
+                    </div>
+                </li>
+            </ul>
         </div>
-     <p><i>Explora nuestra galería de imágenes relacionadas con la tecnología y la innovación.</i></i></p>
-    
-    <h2>Articulos IT</h2>
-    <div class="list-news"> 
-        <ul>
-            <li><a href="https://www.example.com/news1">Noticia 1: Un nuevo producto</a></li>
-            <li><a href="https://www.example.com/news2">Noticia 2: Actualización de software importante</a></li>
-            <li><a href="https://www.example.com/news3">Noticia 3: Análisis de tendencias tecnológicas</a></li>
-        </ul>
-    </div>
-    <p><i>Descubre las últimas novedades en tecnología, desde lanzamientos de productos hasta análisis de tendencias.</i></p>
-   
+        <div class="gallery-controls">
+            <button class="gallery-button prev">&#10094;</button>
+            <button class="gallery-button next">&#10095;</button>
+        </div>
+        <p class="fade-in-up"><i>Descubre las últimas novedades en tecnología, desde lanzamientos de productos hasta análisis de tendencias.</i></p>
+    </section>
 
     <footer>
         <p>&copy; 2025 NEWS IT. Todos los derechos reservados.</p>
     </footer>
 </body>
+</html>

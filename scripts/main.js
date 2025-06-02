@@ -1,4 +1,5 @@
 
+
 //MANEJADORES DE EVENTOS
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -89,27 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
-
-//ANIMACIONES
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.animate');
-    elements.forEach((element) => {
-        element.classList.add('fade-in');
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryTrack = document.querySelector('.gallery-track');
-    const galleryItems = document.querySelectorAll('.gallery-track div');
-    let currentIndex = 0;
-    const itemWidth = galleryItems[0].clientWidth;
-    const totalItems = galleryItems.length;
-
-    const moveToNextItem = () => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        const offset = -currentIndex * itemWidth;
-        galleryTrack.style.transform = `translateX(${offset}px)`;
-    };
-    setInterval(moveToNextItem, 3000);
 });
