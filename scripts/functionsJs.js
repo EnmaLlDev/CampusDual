@@ -1,4 +1,11 @@
-// Galeria home
+// TITULO DE LA PÁGINA
+document.addEventListener("DOMContentLoaded", function() {
+  let h1 = document.querySelector("h1");
+  h1.classList.add("glitch");
+  h1.setAttribute("data-text", h1.textContent);
+});
+
+// GALERIA HOME
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".gallery-track ul");
     const prevBtn = document.querySelector(".gallery-button.prev");
@@ -22,65 +29,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
- // Array de artículos
-const articulos = [
-    "Articulo1",
-    "Articulo2",
-    "Articulo3",
-    "Articulo4"
+//SECCION BUSQUEDA DE ARTICULOS
+const articles = [
+  { title: "Lanzamiento de Java 24", summary: "Java 24 trae nuevas características para desarrolladores." },
+  { title: "Tendencias en Inteligencia Artificial", summary: "La IA sigue revolucionando el sector tecnológico." },
+  { title: "Opinión: El futuro de la nube", summary: "¿Qué nos espera en la computación en la nube?" },
+  { title: "Eventos tecnológicos 2025", summary: "No te pierdas los eventos más importantes del año." },
+  { title: "Análisis: Seguridad en la web", summary: "Consejos para proteger tus datos en línea." }
 ];
-const lista = document.getElementById('articles-list');
-const searchInput = document.getElementById('search-article');
 
-// Cambia el contenedor a un div en el HTML y aquí
-function renderArticulos(filtrados) {
-    lista.innerHTML = "";
-    filtrados.forEach(articulo => {
-        const div = document.createElement('div');
-        div.className = 'article-card fade-in-up'; // Agrega clase de animación
-        div.textContent = articulo;
-        lista.appendChild(div);
-    });
+function renderArticles(filteredArticles) {
+  const list = document.getElementById('articles-list');
+  list.innerHTML = '';
+  if (filteredArticles.length === 0) {
+    list.innerHTML = '<p class="no-results">No se encontraron artículos.</p>';
+    return;
+  }
+  filteredArticles.forEach(article => {
+    const div = document.createElement('div');
+    div.className = 'article-card';
+    div.innerHTML = `<h3>${article.title}</h3><p>${article.summary}</p>`;
+    list.appendChild(div);
+  });
 }
-// Renderiza todos al inicio
-renderArticulos(articulos);
 
-// Filtra en tiempo real según el input
-searchInput.addEventListener('input', function() {
-    const texto = this.value.toLowerCase();
-    const filtrados = articulos.filter(art => art.toLowerCase().includes(texto));
-    renderArticulos(filtrados);
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('search-article');
+  renderArticles(articles);
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    const filtered = articles.filter(article =>
+      article.title.toLowerCase().includes(query) ||
+      article.summary.toLowerCase().includes(query)
+    );
+    renderArticles(filtered);
+  });
 });
 
+// SECCIÓN DE ÍCONOS DE REDES SOCIALES
+document.addEventListener('DOMContentLoaded', () => {
+  const socialIcons = [
+    { name: 'Twitter', url: 'https://twitter.com/', icon: 'fab fa-twitter' },
+    { name: 'Facebook', url: 'https://facebook.com/', icon: 'fab fa-facebook' },
+    { name: 'Instagram', url: 'https://instagram.com/', icon: 'fab fa-instagram' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/', icon: 'fab fa-linkedin' },
+    { name: 'GitHub', url: 'https://github.com/', icon: 'fab fa-github' }
+  ];
 
-// seccion de contacto
-document.addEventListener("DOMContentLoaded", function() {
-    const socialNetworks = [
-        {
-            name: "Instagram",
-            url: "https://instagram.com/NewIt",
-            icon: "fab fa-instagram" 
-        },
-        {
-            name: "Facebook",
-            url: "https://facebook.com/NewsIt",
-            icon: "fab fa-facebook"
-        },
-        {
-            name: "Twitter",
-            url: "https://twitter.com/NewIt",
-            icon: "fab fa-twitter"
-        }
-    ];
-
-    const container = document.getElementById("social-icons");
-    socialNetworks.forEach((network, i) => {
-        const a = document.createElement("a");
-        a.href = network.url;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.title = network.name;
-        a.innerHTML = `<i class="social-icon ${network.icon}" style="animation-delay:${i * 0.2}s"></i>`;
-        container.appendChild(a);
-    });
+  const container = document.getElementById('social-icons');
+  container.innerHTML = socialIcons.map(social => `
+    <a href="${social.url}" class="social-link" target="_blank" title="${social.name}">
+      <i class="${social.icon}"></i>
+    </a>
+  `).join('');
 });
